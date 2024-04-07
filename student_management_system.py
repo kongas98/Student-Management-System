@@ -1,33 +1,5 @@
 # List of students with their details
-student_list = [
-    {
-        "id": "1001",
-        "name": "Themis",
-        "lastname": "Kottas",
-        "fathername": "Dimitrios",
-        "age": 25,
-        "class": 2,
-        "number_id": "AK254473",
-    },
-    {
-        "id": "1002",
-        "name": "Kostas",
-        "lastname": "Malamas",
-        "fathername": "Stergios",
-        "age": 25,
-        "class": 1,
-        "number_id": None,
-    },
-    {
-        "id": "1003",
-        "name": "Vaggelis",
-        "lastname": "Paschalidis",
-        "fathername": "Nektarios",
-        "age": 25,
-        "class": 3,
-        "number_id": "LM225412",
-    },
-]
+student_list = []
 
 # Function to create a new entry for a student
 def New_Entry():
@@ -146,10 +118,11 @@ def Print_Entry():
             print(f"\n----------\nEntry Number {i+1}\n----------")
             for key in student_list[i].keys():
                 print(f"{key} --> {student_list[i][key]}")
-        # Print a message indicating that the student is not found (this should not occur for viewing all entries)
-        print("Student not found!")
-        # Return to the main menu
         Menu()
+    # Print a message indicating that the student is not found (this should not occur for viewing all entries)
+    print("Student not found!")
+    # Return to the main menu
+    Menu()
 
 
 # Function to update student details by ID
@@ -180,6 +153,7 @@ def Update_Entry():
     # If the student is not found in the list, print an error message
     if not found:
         print("----------\nERROR 404! Student not found!\n----------")
+        Menu()
 
     # Update student information
     info_update = input("""\n----------\nWhat info do you want to update?
